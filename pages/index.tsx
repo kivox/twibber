@@ -1,11 +1,7 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
+import Shell from '@/components/layout/shell';
 
-export default function HomePage() {
-  return (
-    <>
-      <Welcome />
-      <ColorSchemeToggle />
-    </>
-  );
+export default function Home() {
+    return (
+        <Shell title="Home" />
+    );
 }
