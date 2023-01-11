@@ -1,39 +1,39 @@
-# Mantine Next Template
+# Twibber
+Twitter is hell, so let's make it worse.
 
-Get started with Mantine + Next with just a few button clicks.
-Click `Use this template` button at the header of repository or [follow this link](https://github.com/mantinedev/mantine-next-template/generate) and
-create new repository with `@mantine` packages. Note that you have to be logged in to GitHub to generate template.
+### Features
+- Authentication System with Time-based 2FA
+- Tweet posting, deletion and **FREE** editing.
+- Follow and unfollow other users
+- View a feed of tweets from users you follow
+- View a profile page with a user's tweets and followers/following
 
-## Features
+### Tech Stack
+Twibber is built entirely in **NextJS**
+- **Frontend**:
+  - Mantine UI
+- **Backend**:
+  - Prisma
+  - PostgreSQL
+- **Deployment**:
+    - Docker Compose
 
-This template comes with several essential features:
+### Getting Started
+- **Docker Compose**
+  - Install **Docker**
+  - Edit the `docker-compose.yml` file for security reasons.
+  - Run `docker-compose up` in the root directory or run `docker-compose up -d` to run the app in the background
+  - Navigate to `localhost:3000` in your browser
+  - To stop the app, run `docker-compose down`
+  - To stop the app and remove the containers, run `docker-compose down --rmi all`
 
-- Server side rendering setup for Mantine
-- Color scheme is stored in cookie to avoid color scheme mismatch after hydration
-- Storybook with color scheme toggle
-- Jest with react testing library
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+### Contributing
+We welcome contributions to Twibber. If you're interested in helping out, please take a look at the issues and see if there's something you'd like to work on.
 
-## npm scripts
+Please note that all code contributions will be released under the same open-source license as the project.
 
-### Build and dev scripts
+### Support
+If you have any questions or encounter any issues, feel free to open an issue.
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `export` – exports static website to `out` folder
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
-
-### Testing scripts
-
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
-
-### Other scripts
-
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+### [LICENSE](LICENSE.md)
+### [NPM Scripts](SCRIPTS.md)
