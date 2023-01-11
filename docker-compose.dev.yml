@@ -1,0 +1,26 @@
+version: '3'
+services:
+  nextjs:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgres://postgres:password@db:5432/twibber"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    command: ["sh", "-c", "yarn prisma migrate save && yarn prisma migrate up && yarn dev"]
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: twibber
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
