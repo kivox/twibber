@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
     Anchor,
     Button,
@@ -15,8 +15,9 @@ import {
     TextInput,
 } from '@mantine/core';
 import Link from 'next/link';
-import {upperFirst, useToggle} from '@mantine/hooks';
-import {useForm} from '@mantine/form';
+import { upperFirst, useToggle } from '@mantine/hooks';
+import { useForm } from '@mantine/form';
+import { showNotification } from '@mantine/notifications';
 
 function Header() {
     const [authModal, setAuthModal] = useState(false);
@@ -24,8 +25,8 @@ function Header() {
     const [type, toggle] = useToggle(['login', 'register']);
     const form = useForm({
         initialValues: {
-            email: '',
             username: '',
+            email: '',
             password: '',
             terms: true,
         },
@@ -39,53 +40,66 @@ function Header() {
     return (
         <>
             <Modal
-                title={
+              title={
                     <Text size="xl" weight={500}>
                         {upperFirst(type)}
                     </Text>
                 }
-                onClose={() => {
+              onClose={() => {
                     setAuthModal(false);
                 }}
-                opened={authModal}
-                centered
+              opened={authModal}
+              centered
             >
-                <form onSubmit={form.onSubmit(() => {
+                <form onSubmit={form.onSubmit((values) => {
+                    if (type === 'login') {
+                        showNotification({
+                            title: 'Login',
+                            message: JSON.stringify(values),
+                            color: 'teal',
+                        });
+                    } else {
+                        showNotification({
+                            title: 'Register',
+                            message: JSON.stringify(values),
+                            color: 'teal',
+                        });
+                    }
                 })}
                 >
                     <Stack>
                         {type === 'register' && (
                             <TextInput
-                                label="Name"
-                                placeholder="Your name"
-                                value={form.values.name}
-                                onChange={(event) => form.setFieldValue('name', event.currentTarget.value)}
+                              label="Username"
+                              placeholder="username"
+                              value={form.values.username}
+                              onChange={(event) => form.setFieldValue('name', event.currentTarget.value)}
                             />
                         )}
 
                         <TextInput
-                            required
-                            label="Email"
-                            placeholder="hello@mantine.dev"
-                            value={form.values.email}
-                            onChange={(event) => form.setFieldValue('email', event.currentTarget.value)}
-                            error={form.errors.email && 'Invalid email'}
+                          required
+                          label="Email"
+                          placeholder="hello@mantine.dev"
+                          value={form.values.email}
+                          onChange={(event) => form.setFieldValue('email', event.currentTarget.value)}
+                          error={form.errors.email && 'Invalid email'}
                         />
 
                         <PasswordInput
-                            required
-                            label="Password"
-                            placeholder="Your password"
-                            value={form.values.password}
-                            onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
-                            error={form.errors.password && 'Password should include at least 6 characters'}
+                          required
+                          label="Password"
+                          placeholder="••••••••••••"
+                          value={form.values.password}
+                          onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
+                          error={form.errors.password && 'Password should include at least 6 characters'}
                         />
 
                         {type === 'register' && (
                             <Checkbox
-                                label="I accept terms and conditions"
-                                checked={form.values.terms}
-                                onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
+                              label="I accept terms and conditions"
+                              checked={form.values.terms}
+                              onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
                             />
                         )}
                     </Stack>
@@ -93,11 +107,11 @@ function Header() {
                     <Group position="apart" mt="xl">
                         <Link href="/" legacyBehavior passHref>
                             <Anchor
-                                component="button"
-                                type="button"
-                                color="dimmed"
-                                onClick={() => toggle()}
-                                size="xs"
+                              component="button"
+                              type="button"
+                              color="dimmed"
+                              onClick={() => toggle()}
+                              size="xs"
                             >
                                 {type === 'register'
                                     ? 'Already have an account? Login'
@@ -115,11 +129,11 @@ function Header() {
                         <Link href="/">
                             <>
                                 <Text
-                                    size="lg"
-                                    weight={800}
-                                    component="span"
-                                    variant="gradient"
-                                    gradient={{from: 'blue', to: 'teal'}}
+                                  size="lg"
+                                  weight={800}
+                                  component="span"
+                                  variant="gradient"
+                                  gradient={{ from: 'blue', to: 'teal' }}
                                 >
                                     twibber
                                 </Text>
@@ -130,9 +144,9 @@ function Header() {
                         </Link>
 
                         <Button
-                            ml="auto"
-                            variant="default"
-                            onClick={() => {
+                          ml="auto"
+                          variant="default"
+                          onClick={() => {
                                 setAuthModal(true);
                             }}
                         >

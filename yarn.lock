@@ -1625,12 +1625,12 @@
     "@mantine/ssr" "5.9.0"
     "@mantine/styles" "5.9.0"
 
-"@mantine/notifications@5.9.0":
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/@mantine/notifications/-/notifications-5.9.0.tgz#311708bf6614efc74fbe61f833358f185133bedb"
-  integrity sha512-v95+rRmmdi3SCCR67C9m6+OSxQLkbmpu5sgRx8QvLzc4WBK+xA1X27gRTd1a+eA2MdZFvv7jDAOxKIOqTgmI8g==
+"@mantine/notifications@^5.10.0":
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/@mantine/notifications/-/notifications-5.10.0.tgz#8e6e6ca54faf9f7a2ae9d47f01d8ce55689ff03a"
+  integrity sha512-ipqH8ia0ibjHj1+4hIgFmYK5RbmGX2oEyZWoIYVie5rwf8OgdIQOjF4LaZw+KVw0QPvNajj9Fj4AQay5egJSDQ==
   dependencies:
-    "@mantine/utils" "5.9.0"
+    "@mantine/utils" "5.10.0"
     react-transition-group "4.4.2"
 
 "@mantine/prism@5.9.0":
@@ -1656,6 +1656,11 @@
   dependencies:
     clsx "1.1.1"
     csstype "3.0.9"
+
+"@mantine/utils@5.10.0":
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.10.0.tgz#d77bdbd4fbf0ef7b10dd0c6480ce9a035dd31ae9"
+  integrity sha512-mHnNm0ajIa8qLAIEwv82N6+7YKecynOA3I8vzgBHXS2x4HwGsHITFYGmMh2LNpx5dRL034tObfEFYZXqncyEDw==
 
 "@mantine/utils@5.9.0":
   version "5.9.0"
@@ -4697,7 +4702,7 @@ cookie@0.5.0:
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.5.0.tgz#d1f5d71adec6558c58f389987c366aa47e994f8b"
   integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
 
-cookie@^0.4.0:
+cookie@^0.4.0, cookie@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.2.tgz#0e41f24de5ecf317947c82fc789e06a884824432"
   integrity sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==
@@ -8865,6 +8870,16 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
+next-api-middleware@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/next-api-middleware/-/next-api-middleware-2.0.1.tgz#e794da5dc7bb41b3226ee50eb70313bdedeb324b"
+  integrity sha512-yqOQjrOXkqZ7f1FybmTRWE1F4ypfcNWMC5FnmLresfu4ljY0W7iNwvOsaxSvCnoLYF5dnqxq+XeVeac7Gx9s9A==
+
+next-api-route-middleware@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/next-api-route-middleware/-/next-api-route-middleware-1.0.2.tgz#d7acd393af05e815cb202f10bcb4ce7ca99648fb"
+  integrity sha512-GJBQWHkQ1yOddd30isD0AU3CJ/BX80jJAn/ao6Bkv+pXkWmmMT/xd/1Rx7IcucCjex4Y8pvFInZPi8XJf0lstw==
+
 next@12.3.1:
   version "12.3.1"
   resolved "https://registry.yarnpkg.com/next/-/next-12.3.1.tgz#127b825ad2207faf869b33393ec8c75fe61e50f1"
@@ -8951,6 +8966,14 @@ node-releases@^2.0.6:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.8.tgz#0f349cdc8fcfa39a92ac0be9bc48b7706292b9ae"
   integrity sha512-dFSmB8fFHEH/s81Xi+Y/15DQY6VHW81nXRj86EMSL3lmuTmK1e+aT4wrFCkTbm+gSwkw4KpX+rT/pMM2c1mF+A==
+
+nookies@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/nookies/-/nookies-2.5.2.tgz#cc55547efa982d013a21475bd0db0c02c1b35b27"
+  integrity sha512-x0TRSaosAEonNKyCrShoUaJ5rrT5KHRNZ5DwPCuizjgrnkpE5DRf3VL7AyyQin4htict92X1EQ7ejDbaHDVdYA==
+  dependencies:
+    cookie "^0.4.1"
+    set-cookie-parser "^2.4.6"
 
 normalize-package-data@^2.3.2, normalize-package-data@^2.3.4, normalize-package-data@^2.5.0:
   version "2.5.0"
@@ -10512,6 +10535,11 @@ set-blocking@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
   integrity sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==
+
+set-cookie-parser@^2.4.6:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/set-cookie-parser/-/set-cookie-parser-2.5.1.tgz#ddd3e9a566b0e8e0862aca974a6ac0e01349430b"
+  integrity sha512-1jeBGaKNGdEq4FgIrORu/N570dwoPYio8lSoYLWmX7sQ//0JY08Xh9o5pBcgmHQ/MbsYp/aZnOe1s1lIsbLprQ==
 
 set-value@^2.0.0, set-value@^2.0.1:
   version "2.0.1"
