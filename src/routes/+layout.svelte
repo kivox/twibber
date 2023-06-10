@@ -11,10 +11,10 @@
     <title>Twibber</title>
 </svelte:head>
 
-<div class="bg-white dark:bg-black text-black dark:text-white min-h-screen">
-    <div class="grid grid-cols-4 mx-auto border border-black max-w-screen-xl">
+<div class="bg-white dark:bg-black text-black dark:text-white">
+    <div class="grid grid-cols-4 mx-auto border-x border-black max-w-screen-xl min-h-screen">
         <Navbar/>
-        <main class="border border-black col-span-2">
+        <main class="border-x border-black col-span-2">
             <slot/>
         </main>
         <Sidebar/>

@@ -17,6 +17,6 @@
     }
 </script>
 
-<div class="border border-black">
-    navbar
+<div class="p-2">
+    <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-900">Twibber</h1>
 </div>

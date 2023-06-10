@@ -1,3 +1,3 @@
-<div class="border border-black">
-    sidebar
+<div class="p-2">
+
 </div>
