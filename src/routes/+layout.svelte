@@ -2,21 +2,9 @@
     // import tailwind
     import "@/styles/tailwind.css"
 
-    import { onMount } from 'svelte';
-
-    let darkMode = false;
-
-    onMount(() => {
-        const theme = localStorage.getItem('theme');
-        darkMode = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        document.documentElement.classList.toggle('dark', darkMode);
-    });
-
-    function toggleDarkMode() {
-        darkMode = !darkMode;
-        localStorage.setItem('theme', darkMode ? 'dark' : 'light');
-        document.documentElement.classList.toggle('dark', darkMode);
-    }
+    // Svelte Components
+    import Navbar from "@/components/Layout/Navbar.svelte";
+    import Sidebar from "@/components/Layout/Sidebar.svelte";
 </script>
 
 <svelte:head>
@@ -24,8 +12,11 @@
 </svelte:head>
 
 <div class="bg-white dark:bg-black text-black dark:text-white min-h-screen">
-    <button on:click="{toggleDarkMode}">
-        {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-    </button>
-    <slot />
+    <div class="grid grid-cols-4 mx-auto border border-black max-w-screen-xl">
+        <Navbar/>
+        <main class="border border-black col-span-2">
+            <slot/>
+        </main>
+        <Sidebar/>
+    </div>
 </div>
