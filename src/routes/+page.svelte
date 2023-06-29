@@ -1,16 +1,12 @@
 <div>
-    <h1 class="text-2xl font-bold p-2">Home</h1>
-    <!--
-    <div class="p-2 text-lg font-bold text-white border-b border-black">
-        <div class="p-2 grid grid-cols-2 w-full rounded-full bg-neutral-700">
-            <button class="rounded-full bg-neutral-950 py-2">
-                For you
-            </button>
-            <button class="rounded-full bg-neutral-950 py-2">
-                Following
-            </button>
-        </div>
+    <div class="p-2 flex flex-row w-full text-black text-center text-xl font-bold">
+        <a href="/?feed=foryou" class="w-full p-2 rounded-l-full bg-white">
+            For you
+        </a>
+        <hr class="border-black"/>
+        <a href="/?feed=following" class="w-full p-2 rounded-r-full bg-white">
+            Following
+        </a>
     </div>
-    -->
-    <hr class="border-black">
+    <hr class="border-black dark:border-neutral-700">
 </div>

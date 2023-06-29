@@ -18,5 +18,5 @@
 </script>
 
 <div class="p-2">
-    <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-900">Twibber</h1>
+    <h1 class="text-2xl font-bold text-black bg-white w-full text-center p-2 rounded-full">twibber</h1>
 </div>

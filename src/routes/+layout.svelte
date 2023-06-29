@@ -8,13 +8,13 @@
 </script>
 
 <svelte:head>
-    <title>Twibber</title>
+    <title>{`Twibber - ${}`}</title>
 </svelte:head>
 
 <div class="bg-white dark:bg-black text-black dark:text-white">
-    <div class="grid grid-cols-4 mx-auto border-x border-black max-w-screen-xl min-h-screen">
+    <div class="grid grid-cols-4 mx-auto border-x border-black dark:border-neutral-700 max-w-screen-xl min-h-screen">
         <Navbar/>
-        <main class="border-x border-black col-span-2">
+        <main class="border-x border-black dark:border-neutral-700 col-span-2">
             <slot/>
         </main>
         <Sidebar/>
