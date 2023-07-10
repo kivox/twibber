@@ -1,20 +1,14 @@
 <script>
-    // import tailwind
-    import "@/styles/tailwind.css"
+    import "~/styles/tailwind.css"
 
-    // Svelte Components
-    import Navbar from "@/components/Layout/Navbar.svelte";
-    import Sidebar from "@/components/Layout/Sidebar.svelte";
+    import Navbar from "../components/Navbar.svelte";
+    import Sidebar from "../components/Sidebar.svelte";
 </script>
 
-<svelte:head>
-    <title>{`Twibber - ${}`}</title>
-</svelte:head>
-
-<div class="bg-white dark:bg-black text-black dark:text-white">
-    <div class="grid grid-cols-4 mx-auto border-x border-black dark:border-neutral-700 max-w-screen-xl min-h-screen">
+<div class="font-medium bg-black text-white">
+    <div class="grid grid-cols-8 min-h-screen max-w-screen-xl mx-auto">
         <Navbar/>
-        <main class="border-x border-black dark:border-neutral-700 col-span-2">
+        <main class="col-span-6 p-4 border-x">
             <slot/>
         </main>
         <Sidebar/>
