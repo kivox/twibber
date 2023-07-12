@@ -25,10 +25,12 @@ export const auth = lucia({
 
 export type Auth = typeof auth
 
+const authUrl = pubEnv.PUBLIC_APP_URL || privEnv.VERCEL_URL
+
 export const googleAuth = google(auth, {
     clientId: privEnv.GOOGLE_CLIENT_ID,
     clientSecret: privEnv.GOOGLE_CLIENT_SECRET,
-    redirectUri: `${pubEnv.PUBLIC_APP_URL}/login/google/callback`,
+    redirectUri: `${authUrl}/login/google/callback`,
     scope: ["openid", "email", "profile"]
 });
 
@@ -36,6 +38,6 @@ export const googleAuth = google(auth, {
 export const discordAuth = discord(auth, {
     clientId: privEnv.DISCORD_CLIENT_ID,
     clientSecret: privEnv.DISCORD_CLIENT_SECRET,
-    redirectUri: `${pubEnv.PUBLIC_APP_URL}/login/discord/callback`,
+    redirectUri: `${authUrl}/login/discord/callback`,
     scope: ["email", "guilds"]
 });
