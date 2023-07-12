@@ -6,17 +6,22 @@
     title="Home"
     buttons={[
         {
-            title: "For you",
+            label: "For you",
             href: "/"
         },
         {
-            title: "Following",
+            label: "Following",
             href: "/following"
         }
     ]}
 >
-    <div class="h-screen"></div>
-    <div class="h-screen"></div>
-    <div class="h-screen"></div>
-    <div class="h-screen"></div>
+    <div class="h-64 w-full bg-gray-950 rounded p-4">a</div>
+    <div class="h-64 w-full bg-gray-950 rounded p-4">a</div>
+    <div class="h-64 w-full bg-gray-950 rounded p-4">a</div>
+    <div class="h-64 w-full bg-gray-950 rounded p-4">a</div>
+    <div class="h-64 w-full bg-gray-950 rounded p-4">a</div>
+    <div class="h-64 w-full bg-gray-950 rounded p-4">a</div>
+    <div class="h-64 w-full bg-gray-950 rounded p-4">a</div>
+    <div class="h-64 w-full bg-gray-950 rounded p-4">a</div>
+    <div class="h-64 w-full bg-gray-950 rounded p-4">a</div>
 </Box>
