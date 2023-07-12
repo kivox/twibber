@@ -1,10 +1,10 @@
 <script lang="ts">
-    export let link: string;
+    export let href: string;
 </script>
 
 <a
-        href={link}
-        class="p-2 shadow-2xl bg-gray-800 rounded hover:bg-opacity-75 text-xl"
+        href={href}
+        class="p-2 bg-gray-800 rounded hover:bg-opacity-75 text-lg transition"
 >
     <slot/>
 </a>

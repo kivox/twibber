@@ -30,12 +30,22 @@
             Good Evening!
         </div>
         <hr class="border-gray-800">
-        <div class="w-full flex flex-row p-4">
-            <div class="w-full">Comment</div>
-            <div class="w-full">Retweeb</div>
-            <div class="w-full">Like</div>
-            <div class="w-full">Analytics</div>
-            <div class="w-full">Download</div>
+        <div class="w-full grid grid-cols-5 h-16">
+            <div class="item">Comment</div>
+            <div class="item">Retweeb</div>
+            <div class="item">Like</div>
+            <div class="item">Analytics</div>
+            <div class="item">Download</div>
         </div>
     </div>
 </Box>
+
+<style>
+    .item {
+        @apply w-full text-center h-full flex justify-center items-center;
+    }
+
+    .item:hover {
+        @apply bg-white bg-opacity-5;
+    }
+</style>
