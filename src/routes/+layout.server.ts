@@ -12,8 +12,10 @@ export const load: LayoutServerLoad = async ({locals}) => {
 			id: true,
 			image: true,
 			name: true,
+			username: true,
 			email: true,
 			admin: true,
+			created_at: true,
 		}
 	}) : undefined;
 

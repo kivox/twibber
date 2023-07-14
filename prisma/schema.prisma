@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,7 +8,7 @@ datasource db {
 }
 
 model User {
-  id String @id @unique
+  id String @id @unique @default(cuid())
 
   name     String
   username String  @unique
@@ -25,15 +22,15 @@ model User {
 
   auth_session Session[]
   auth_key     Key[]
+  posts        Post[]
 }
 
 model Session {
-  id             String @id @unique
+  id             String @id @unique @default(cuid())
   active_expires BigInt
   idle_expires   BigInt
 
   user_id String
-  // pass this key to `userRelationKey`
   user    User   @relation(references: [id], fields: [user_id], onDelete: Cascade)
 
   created_at DateTime @default(now())
@@ -43,15 +40,44 @@ model Session {
 }
 
 model Key {
-  id              String  @id @unique
+  id              String  @id @unique @default(cuid())
   hashed_password String?
 
   user_id String
-  // pass this key to `userRelationKey`
   user    User   @relation(references: [id], fields: [user_id], onDelete: Cascade)
 
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt
 
   @@index([user_id])
+}
+
+model Post {
+  id String @id @unique @default(cuid())
+
+  reply_to String?
+  reply    Post?   @relation("reply", references: [id], fields: [reply_to], onDelete: Cascade)
+
+  type     PostType
+  content  String
+  quote_id String?
+  quote    Post?    @relation("quote", references: [id], fields: [quote_id], onDelete: Cascade)
+
+  user_id String
+  user    User   @relation(references: [id], fields: [user_id], onDelete: Cascade)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  replies Post[] @relation("reply")
+  quotes  Post[] @relation("quote")
+
+  @@index([user_id])
+}
+
+enum PostType {
+  TWEEB
+  RETWEEB
+  REPLY
+  QUOTE
 }

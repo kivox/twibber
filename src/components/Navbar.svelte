@@ -10,12 +10,6 @@
 			auth: false,
 		},
 		{
-			name: 'Saved',
-			href: '/me/saved',
-			icon: 'bookmark',
-			auth: true,
-		},
-		{
 			name: 'Profile',
 			href: '/me',
 			icon: 'user',
@@ -34,9 +28,9 @@
         <div class="flex flex-col gap-2 p-2 w-full">
             {#each links as link}
                 {#if !link.auth}
-                    <NavLink href={link.href} icon={link.icon}>{link.name}</NavLink>
+                    <NavLink href={link.href}>{link.name}</NavLink>
                 {:else if data.session}
-                    <NavLink href={link.href} icon={link.icon}>{link.name}</NavLink>
+                    <NavLink href={link.href}>{link.name}</NavLink>
                 {/if}
             {/each}
         </div>
