@@ -46,7 +46,7 @@ export const GET: RequestHandler = async ({url, cookies, locals, params}) => {
 						throw error(400, "Google email is required")
 					}
 
-					let username = googleUser.name.toLowerCase().replace(" ", "_")
+					let username = googleUser.name.toLowerCase().split("(")[0].split(" ")[0].replace(" ", "_")
 
 					let tries = 0
 					while (tries > 0) {
