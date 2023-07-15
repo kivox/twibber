@@ -18,7 +18,10 @@
 
 	export let dataForm;
 
-	const {form, errors, enhance} = superForm(dataForm);
+	const {form, errors, enhance} = superForm(dataForm, {
+		invalidateAll: true,
+		resetForm: true,
+    });
 
 	$: console.log($form, $errors)
 </script>

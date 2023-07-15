@@ -16,6 +16,7 @@ export const load = async () => {
 			orderBy: {
 				created_at: 'desc',
 			},
+			take: 50,
 			include: {
 				user: {
 					select: {
