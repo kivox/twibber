@@ -23,6 +23,7 @@
 		"@tailwindcss/typography": "^0.5.9",
 		"autoprefixer": "^10.4.14",
 		"lucia": "^2.0.0-beta.4",
+		"marked": "^5.1.1",
 		"prisma": "^4.16.2",
 		"svelte": "^4.0.0",
 		"sveltekit-superforms": "^1.3.0",
@@ -32,6 +33,8 @@
 		"zod": "^3.21.4"
 	},
 	"devDependencies": {
+		"@types/marked": "^5.0.1",
+		"@types/sanitize-html": "^2.9.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"eslint": "^8.28.0",
@@ -40,6 +43,7 @@
 		"postcss": "^8.4.24",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
+		"sanitize-html": "^2.11.0",
 		"svelte-check": "^3.4.3",
 		"typescript": "^5.0.0"
 	},

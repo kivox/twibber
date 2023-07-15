@@ -1,4 +1,7 @@
 <script lang="ts">
+	import sanitizeHtml from 'sanitize-html';
+	import {marked} from 'marked';
+
 	export let post: {
 		id: string,
 
@@ -48,8 +51,6 @@
 		}
 		return Math.floor(seconds) + "s";
 	}
-
-	$: console.log(post)
 </script>
 
 <div class="flex flex-col w-full bg-gray-950 rounded">
@@ -66,6 +67,6 @@
     </div>
     <hr class="border-gray-800">
     <div class="p-4 text-sm font-normal">
-        {post.content}
+        {@html marked(sanitizeHtml(post.content))}
     </div>
 </div>
