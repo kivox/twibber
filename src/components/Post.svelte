@@ -21,8 +21,8 @@
 			admin: string,
 		},
 
-        created_at: Date,
-        updated_at: Date,
+		created_at: Date,
+		updated_at: Date,
 	}
 
 	function timeSince(date: Date): string {
@@ -66,7 +66,7 @@
         <div class="text-gray-400 text-xs h-full">{timeSince(post.created_at)}</div>
     </div>
     <hr class="border-gray-800">
-    <div class="p-4 text-sm font-normal">
-        {@html marked(sanitizeHtml(post.content))}
+    <div class="p-4 text-sm font-normal text-font">
+        {@html marked(sanitizeHtml(post.content).replace(/\n/g, '<br/>'))}
     </div>
 </div>

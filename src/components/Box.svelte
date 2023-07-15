@@ -26,20 +26,10 @@
 </script>
 
 <div class="flex flex-col gap-4 relative">
-    <div class="w-full bg-gray-900 sticky -top-14 rounded-b-md">
+    <div class="w-full bg-gray-900 rounded-b-md z-50 {buttons.length > 0 ? 'sticky -top-16' : ''}">
         <div class={`w-full flex p-4 font-medium text-2xl`}>
             {title}
         </div>
-        {#if buttons.length > 0}
-            <hr class="border-gray-800">
-            <div class="flex flex-row w-full gap-2 p-2 sticky top-0">
-                {#each buttons as button}
-                    <a href={button.href} class="w-full text-center bg-gray-800 py-2 rounded">
-                        {button.label}
-                    </a>
-                {/each}
-            </div>
-        {/if}
         {#if user && ["/", "/following"].includes($page.route.id)}
             <hr class="border-gray-800">
             <form method="post" action="/" class="flex flex-row gap-2 w-full h-full p-2" use:enhance>
@@ -71,6 +61,16 @@
                     </div>
                 </div>
             </form>
+        {/if}
+        {#if buttons.length > 0}
+            <hr class="border-gray-800">
+            <div class="flex flex-row w-full gap-2 p-2 sticky top-0">
+                {#each buttons as button}
+                    <a href={button.href} class="w-full text-center bg-gray-800 py-2 rounded">
+                        {button.label}
+                    </a>
+                {/each}
+            </div>
         {/if}
     </div>
 
