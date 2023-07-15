@@ -18,12 +18,11 @@
 
 	export let dataForm;
 
-	const {form, errors, enhance} = superForm(dataForm, {
+	const {form, errors, enhance, delayed} = superForm(dataForm, {
+		applyAction: true,
 		invalidateAll: true,
-		resetForm: true,
-    });
-
-	$: console.log($form, $errors)
+		resetForm: true
+	});
 </script>
 
 <div class="flex flex-col gap-4 relative">
@@ -51,15 +50,23 @@
                     <textarea
                             name="content"
                             class="w-full bg-gray-800 rounded p-2 focus:outline-none focus:ring-0"
-                            placeholder="Ready to tweeb your mind?"></textarea>
+                            placeholder="Ready to tweeb your mind?"
+                            bind:value={$form.content}
+                    ></textarea>
                     <div class="w-full flex flex-row justify-center items-center">
                         {#if $errors.content}
                             <p class="text-red-500 text-xs text-left w-full mt-1 font-normal">{$errors.content}</p>
                         {/if}
                         <div class="flex-grow"></div>
                         <button type="submit"
-                                class="px-4 py-2 bg-blue-600 rounded hover:bg-opacity-75 text-center mt-2 transition">
-                            Tweeb
+                                class="px-4 py-2 bg-blue-600 rounded hover:bg-opacity-75 text-center mt-2 transition disabled:bg-opacity-75"
+                                disabled={$delayed}
+                        >
+                            {#if $delayed}
+                                Tweebing...
+                            {:else}
+                                Tweeb
+                            {/if}
                         </button>
                     </div>
                 </div>
@@ -67,7 +74,7 @@
         {/if}
     </div>
 
-	<div class="flex flex-col gap-4">
-		<slot />
-	</div>
+    <div class="flex flex-col gap-4">
+        <slot/>
+    </div>
 </div>
