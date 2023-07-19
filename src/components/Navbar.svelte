@@ -6,13 +6,16 @@
 		{
 			name: 'Home',
 			href: '/',
-			icon: 'home',
 			auth: false,
+		},
+		{
+			name: 'Users',
+			href: '/users',
+			auth: true,
 		},
 		{
 			name: 'Profile',
 			href: '/me',
-			icon: 'user',
 			auth: true,
 		}
 	]
@@ -23,7 +26,7 @@
 <div class="col-span-2 p-4">
     <div class="flex flex-col justify-center items-center rounded-md bg-gray-900 sticky top-4">
         <a href="/"
-           class="py-4 rounded-full w-full text-center text-4xl bg-gray-900 transition hover:text-gray-300">twibber</a>
+           class="p-4 rounded-full w-full text-center text-4xl bg-gray-900 transition hover:text-gray-300">twibber</a>
         <hr class="w-full border-gray-800">
         <div class="flex flex-col gap-2 p-2 w-full">
             {#each links as link}

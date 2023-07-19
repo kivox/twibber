@@ -23,6 +23,9 @@ model User {
   auth_session Session[]
   auth_key     Key[]
   posts        Post[]
+
+  followers Follow[] @relation("follower")
+  following Follow[] @relation("following")
 }
 
 model Session {
@@ -50,6 +53,22 @@ model Key {
   updated_at DateTime @default(now()) @updatedAt
 
   @@index([user_id])
+}
+
+model Follow {
+  id String @id @unique @default(cuid())
+
+  follower_id String
+  follower    User   @relation("follower", references: [id], fields: [follower_id], onDelete: Cascade)
+
+  following_id String
+  following    User   @relation("following", references: [id], fields: [following_id], onDelete: Cascade)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  @@index([follower_id])
+  @@index([following_id])
 }
 
 model Post {

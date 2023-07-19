@@ -17,7 +17,7 @@
         }
     ]}
 >
-    <div class="relative flex flex-col items-start p-4 bg-gray-900 rounded-md">
+    <div class="relative flex flex-col items-start p-4 bg-gray-950 rounded-md">
         <img class="h-32 w-32 rounded-md object-cover" src={data.user.image} alt={data.user.name}/>
 
         <h2 class="text-2xl font-bold mt-2">{data.user.name}</h2>

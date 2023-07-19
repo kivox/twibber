@@ -26,30 +26,23 @@
 	}
 
 	function timeSince(date: Date): string {
-		const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
+		const currentTime = new Date().getTime();
+		let elapsedSeconds = Math.floor((currentTime - date.getTime()) / 1000);
 
-		let interval = seconds / 31536000;
+		const intervals = [
+			{seconds: 31536000, name: "y"},
+			{seconds: 2592000, name: "mo"},
+			{seconds: 86400, name: "d"},
+			{seconds: 3600, name: "h"},
+			{seconds: 60, name: "m"},
+			{seconds: 1, name: "s"},
+		]
 
-		if (interval > 1) {
-			return Math.floor(interval) + "y";
-		}
-		interval = seconds / 2592000;
-		if (interval > 1) {
-			return Math.floor(interval) + "mo";
-		}
-		interval = seconds / 86400;
-		if (interval > 1) {
-			return Math.floor(interval) + "d";
-		}
-		interval = seconds / 3600;
-		if (interval > 1) {
-			return Math.floor(interval) + "h";
-		}
-		interval = seconds / 60;
-		if (interval > 1) {
-			return Math.floor(interval) + "m";
-		}
-		return Math.floor(seconds) + "s";
+        for (const interval of intervals) {
+            if (elapsedSeconds >= interval.seconds) {
+                return Math.floor(elapsedSeconds / interval.seconds) + interval.name;
+            }
+        }
 	}
 </script>
 
@@ -67,6 +60,9 @@
     </div>
     <hr class="border-gray-800">
     <div class="p-4 text-sm font-normal text-font">
-        {@html marked(sanitizeHtml(post.content).replace(/\n/g, '<br/>'))}
+        {@html marked(sanitizeHtml(post.content).replace(/\n/g, '<br/>'), {
+			headerIds: false,
+            mangle: false,
+        })}
     </div>
 </div>
