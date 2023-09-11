@@ -22,8 +22,14 @@ export const load: PageServerLoad = async ({locals}) => {
 					select: {
 						id: true,
 					}
+				},
+				following: {
+					select: {
+						id: true,
+					}
 				}
 			},
 		}),
 	};
 };
+
