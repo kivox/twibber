@@ -16,7 +16,9 @@ export const load: LayoutServerLoad = async ({locals}) => {
 			email: true,
 			admin: true,
 			created_at: true,
-		}
+			followers: true,
+			following: true,
+		},
 	}) : undefined;
 
 	return {
